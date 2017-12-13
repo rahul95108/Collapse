@@ -15,6 +15,7 @@
 		182DEEA01FDFE46600467FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182DEE9D1FDFE46600467FC2 /* AppDelegate.swift */; };
 		182DEEA11FDFE46600467FC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182DEE9F1FDFE46600467FC2 /* ViewController.swift */; };
 		182DEEA31FDFE5BA00467FC2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182DEEA21FDFE5BA00467FC2 /* Constant.swift */; };
+		185C2C4F1FE138FA003EE1E7 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185C2C4E1FE138FA003EE1E7 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		182DEE9D1FDFE46600467FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182DEE9F1FDFE46600467FC2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		182DEEA21FDFE5BA00467FC2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		185C2C4E1FE138FA003EE1E7 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				182DEE721FDFE40F00467FC2 /* Main.storyboard */,
 				182DEEA21FDFE5BA00467FC2 /* Constant.swift */,
+				185C2C4D1FE138EB003EE1E7 /* Model */,
 				182DEE9C1FDFE46600467FC2 /* AppDelegate */,
 				182DEE9E1FDFE46600467FC2 /* ViewController */,
 				182DEE751FDFE40F00467FC2 /* Assets.xcassets */,
@@ -142,6 +145,14 @@
 				182DEE9F1FDFE46600467FC2 /* ViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		185C2C4D1FE138EB003EE1E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				185C2C4E1FE138FA003EE1E7 /* CustomCell.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +291,7 @@
 			files = (
 				182DEEA11FDFE46600467FC2 /* ViewController.swift in Sources */,
 				182DEEA01FDFE46600467FC2 /* AppDelegate.swift in Sources */,
+				185C2C4F1FE138FA003EE1E7 /* CustomCell.swift in Sources */,
 				182DEEA31FDFE5BA00467FC2 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
