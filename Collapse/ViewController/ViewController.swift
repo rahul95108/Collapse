@@ -68,6 +68,15 @@ class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSou
         }
     }
     
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+        if indexPath.section == 0 {
+            return 82
+        }
+        else{
+            return 0
+        }
+    }
+    
     public func numberOfSections(in tableView: UITableView) -> Int{
         return pickerData.count
     }
