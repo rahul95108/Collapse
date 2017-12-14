@@ -10,6 +10,7 @@ class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSou
     
     var person: Pincode?
     var count = NSInteger()
+    var selectedCount = NSInteger()
     let picker = UIPickerView()
     
     var arrData = NSMutableArray()
@@ -24,6 +25,7 @@ class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSou
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectedCount = 999
         txtItem.inputView = picker
         picker.delegate = self
     }
@@ -49,6 +51,11 @@ class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSou
         headerLabel.textAlignment = .left
         headerView.addSubview(headerLabel)
         
+        headerView.tag = section
+        let headerTapGesture = UITapGestureRecognizer()
+        headerTapGesture.addTarget(self, action: #selector(self.sectionHeaderWasTouched(_:)))
+        headerView.addGestureRecognizer(headerTapGesture)
+        
         return headerView
     }
 
@@ -69,7 +76,7 @@ class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSou
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        if indexPath.section == 0 {
+        if indexPath.section == selectedCount {
             return 82
         }
         else{
@@ -127,6 +134,20 @@ class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSou
         return cell
     }
     
+    // MARK: - Section Header Touch Method -
+    
+    @objc func sectionHeaderWasTouched(_ sender: UITapGestureRecognizer) {
+        let headerView = sender.view
+        let section    = headerView?.tag
+        if section == selectedCount {
+            selectedCount = 999
+        }
+        else{
+            selectedCount = section!
+        }
+        self.tbView.reloadData()
+    }
+    
     // MARK: - Pickerview Delegate Methods -
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -171,7 +192,6 @@ class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSou
                         self.arrData.add(dictData)
                     }
                     self.dictData.setValue(self.arrData, forKey: self.txtItem.text!)
-                    print(self.dictData)
                     self.tbView.reloadData()
                 }
             }
@@ -179,4 +199,3 @@ class ViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSou
         task.resume()
     }
 }
-
